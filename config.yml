@@ -1,0 +1,18 @@
+logging:
+  level: INFO
+  appenders:
+  - type: console
+    threshold: INFO
+
+server:
+  type: default
+  maxThreads: 1024
+
+jobConfig:
+  jobToClassMap :
+   calculate_pi : app.core.jobs.CalculatePi
+   wait_for_20_seconds : app.core.jobs.WaitFor20Seconds
+   fail_immediately : app.core.jobs.FailImmediately
+   count_words : jobs.CountWords
+  defaultPiIterations : 100000
+  initialThreadCount : 100
